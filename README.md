@@ -23,4 +23,5 @@ A powerful and efficient tool to scrape, check, and manage proxies. This tool su
    ```bash
    git clone https://github.com/yourusername/proxyscraper-tool.git
    cd proxyscraper-tool
+   python main.py
 
