@@ -20,7 +20,8 @@ auto <type> → Automates scraping and checking in one step
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/proxyscraper-tool.git
-   cd proxyscraper-tool
+   git clone https://github.com/NotAdl22/ProxySuite
+   cd ProxySuite
+   pip install -r requirements.txt
    python main.py
 
