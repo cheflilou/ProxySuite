@@ -17,13 +17,18 @@ def save_proxies(proxies, proxy_type):
     if not os.path.exists(save_dir):
         os.makedirs(save_dir)
     
-    timestamp = datetime.now().strftime("%H-%M-%S")
-    filename = f"{save_dir}/{proxy_type}_{timestamp}.txt"
-    
-    try:
-        with open(filename, 'w') as f:
-            for proxy in proxies:
-                f.write(f"{proxy}\n")
-        print(f"{Fore.GREEN}Saved {len(proxies)} {proxy_type.upper()} proxies to {os.path.join(today, os.path.basename(filename))}")
-    except Exception as e:
-        print(f"{Fore.RED}Error saving proxies to file: {str(e)}")
+    anonymity_groups = {}
+    for proxy, anonymity in proxies:
+        if anonymity not in anonymity_groups:
+            anonymity_groups[anonymity] = []
+        anonymity_groups[anonymity].append(proxy)
+
+    for anonymity, proxy_list in anonymity_groups.items():
+        filename = f"{save_dir}/{len(proxy_list)}-{anonymity.replace(' ', '_')}-{today}.txt"
+        try:
+            with open(filename, 'w') as f:
+                for proxy in proxy_list:
+                    f.write(f"{proxy}\n")
+            print(f"{Fore.GREEN}Saved {len(proxy_list)} {anonymity} {proxy_type.upper()} proxies to {os.path.join(today, os.path.basename(filename))}")
+        except Exception as e:
+            print(f"{Fore.RED}Error saving {anonymity} {proxy_type.upper()} proxies to file: {str(e)}")
