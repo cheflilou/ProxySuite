@@ -1,17 +1,29 @@
 import requests
 from utils import animated_loading
 from colorama import Fore
+import warnings
+
+
+requests.packages.urllib3.disable_warnings()
 
 PROXY_SOURCES = {
     'proxyscrape': {
-        'http': 'https://api.proxyscrape.com/?request=getproxies&proxytype=http&timeout=10000&country=all&ssl=all&anonymity=all',
+        'http': 'https://api.proxyscrape.com/v2/?request=displayproxies&protocol=http&timeout=10000&country=all&ssl=all&anonymity=all',
         'socks4': 'https://api.proxyscrape.com/?request=getproxies&proxytype=socks4&timeout=10000&country=all',
         'socks5': 'https://api.proxyscrape.com/?request=getproxies&proxytype=socks5&timeout=10000&country=all'
     },
-    'geonode': {
-        'http': 'https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc&protocols=http,https',
-        'socks4': 'https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc&protocols=socks4',
-        'socks5': 'https://proxylist.geonode.com/api/proxy-list?limit=500&page=1&sort_by=lastChecked&sort_type=desc&protocols=socks5'
+    'proxyjudge': {
+        'http': 'https://www.proxy-list.download/api/v1/get?type=http',
+        'https': 'https://www.proxy-list.download/api/v1/get?type=https',
+    },
+    'github': {
+        'http': 'https://raw.githubusercontent.com/TheSpeedX/PROXY-List/master/http.txt',
+    },
+    'proxyscan': {
+        'http': 'https://www.proxyscan.io/download?type=http',
+    },
+    'openproxylist': {
+        'http': 'https://api.openproxylist.xyz/http.txt',
     }
 }
 
@@ -25,13 +37,13 @@ def scrape_proxies(proxy_type, source='proxyscrape'):
     animated_loading(f"Scraping {proxy_type.upper()} proxies from {source}...", 1.5)
     
     try:
-        response = requests.get(url, timeout=20)
+
+        response = requests.get(url, timeout=20, verify=False)
         if response.status_code == 200:
-            if source == 'proxyscrape':
+            if source in ['proxyscrape', 'github', 'openproxylist']:
                 proxies = [proxy.strip() for proxy in response.text.splitlines() if proxy.strip()]
-            elif source == 'geonode':
-                data = response.json()
-                proxies = [f"{item['ip']}:{item['port']}" for item in data.get('data', [])]
+            elif source in ['proxyjudge', 'proxyscan']:
+                proxies = [proxy.strip() for proxy in response.text.split('\r\n') if proxy.strip()]
         else:
             print(f"{Fore.RED}Error: Failed to fetch proxies from {source}. Status code: {response.status_code}")
     except Exception as e:
