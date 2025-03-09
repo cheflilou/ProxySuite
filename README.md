@@ -13,12 +13,12 @@
 - **Auto `<type>`**: Automates scraping and checking in one step.
 
 ### New Features:
-- **Added new proxy sources**: Includes `proxyjudge`, `github`, `proxyscan`, and `openproxylist`
+- **Added new proxy sources**
 - **Anonymity checking**: Proxies are checked for anonymity levels (`Elite`, `Anonymous`, `Transparent`, `Unknown`)
 - **Improved error handling**: Gracefully handles connection issues and skips problematic sources
 - **Real-time progress bar**: Displays checking progress and anonymity counts dynamically
 - **Increased worker threads**: Faster checking with `max_workers=50`
-- **Auto-save on `Control + C`**: Saves working proxies without exiting the program
+- **Auto-save on `Control + C`**
 - **Grouped proxies by anonymity level**
 - **Cleared and refreshed console**: Ensures clean and updated output
 
