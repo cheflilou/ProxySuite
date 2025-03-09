@@ -1,18 +1,26 @@
-# ProxySuite
+# ProxySuite 2.0.0
 
-
-
-![ProxySuite](https://cdn.discordapp.com/attachments/1297285617264234590/1347390941861773333/image.png?ex=67cba719&is=67ca5599&hm=b41bc481a459509fb0baa2b9441d42442212e849bd0735d83703ceb52f17bbd3&)
+[![ProxySuite]([https://cdn.discordapp.com/attachments/1297285617264234590/1347390941861773333/image.png?ex=67cba719&is=67ca5599&hm=b41bc481a459509fb0baa2b9441d42442212e849bd0735d83703ceb52f17bbd3&]
 
 ------
 
 ## Features
 
-scrape all & check → Scrapes all proxy types and automatically checks them
-scrape all → Scrapes all available proxy types (HTTP, SOCKS4, SOCKS5)
-scrape <type> → Scrapes a specific proxy type (scrape http or socks4 or socks5)
-check <type> → Checks the validity and responsiveness of scraped proxies
-auto <type> → Automates scraping and checking in one step
+- **Scrape all & check**: Scrapes all proxy types and automatically checks them.
+- **Scrape all**: Scrapes all available proxy types (HTTP, SOCKS4, SOCKS5).
+- **Scrape `<type>`**: Scrapes a specific proxy type (`scrape http`, `socks4`, or `socks5`).
+- **Check `<type>`**: Checks the validity and responsiveness of scraped proxies.
+- **Auto `<type>`**: Automates scraping and checking in one step.
+
+### New Features:
+- **Added new proxy sources**: Includes `proxyjudge`, `github`, `proxyscan`, and `openproxylist`
+- **Anonymity checking**: Proxies are checked for anonymity levels (`Elite`, `Anonymous`, `Transparent`, `Unknown`)
+- **Improved error handling**: Gracefully handles connection issues and skips problematic sources
+- **Real-time progress bar**: Displays checking progress and anonymity counts dynamically
+- **Increased worker threads**: Faster checking with `max_workers=50`
+- **Auto-save on `Control + C`**: Saves working proxies without exiting the program
+- **Grouped proxies by anonymity level**
+- **Cleared and refreshed console**: Ensures clean and updated output
 
 ---
 
@@ -24,4 +32,3 @@ auto <type> → Automates scraping and checking in one step
    cd ProxySuite
    pip install -r requirements.txt
    python main.py
-
