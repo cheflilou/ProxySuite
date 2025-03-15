@@ -1,6 +1,6 @@
 # ProxySuite 2.0.0
 
-![ProxySuite](https://cdn.discordapp.com/attachments/1342194903521955862/1348331124220231831/image.png?ex=67cf12b6&is=67cdc136&hm=9cf8c5dc571b864048c814536e3e6ce070578ea5e4c443c6ca4204081d5d9abb&)
+![ProxySuite]([https://cdn.discordapp.com/attachments/1342194903521955862/1348331124220231831/image.png?ex=67cf12b6&is=67cdc136&hm=9cf8c5dc571b864048c814536e3e6ce070578ea5e4c443c6ca4204081d5d9abb&](https://files.fm/u/9rjqk8vrg3))
 
 ------
 
