@@ -1,6 +1,6 @@
 # ProxySuite 2.0.0
 
-![ProxySuite]([https://files.fm/f/r6zs4cdctx](https://fv5-4.files.fm/down.php?cf&i=r6zs4cdctx&n=Capture.PNG))
+![ProxySuite]([[https://files.fm/f/r6zs4cdctx](https://fv5-4.files.fm/down.php?cf&i=r6zs4cdctx&n=Capture.PNG)](https://i.postimg.cc/RFD5dLMb/Capture.png))
 
 ------
 
