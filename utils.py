@@ -13,7 +13,7 @@ BANNER = Fore.GREEN + '''
                |___/  ____) | |_| | | ||  __/
                      |_____/ \\__,_|_|\\__\\___|
                      
-''' + Style.BRIGHT + Fore.CYAN + " BETA VERSION 1.0.0 " + Style.RESET_ALL
+''' + Style.BRIGHT + Fore.CYAN + " BETA VERSION 2.0.0 " + Style.RESET_ALL
 
 LOADING_FRAMES = ['⠋', '⠙', '⠹', '⠸', '⠼', '⠴', '⠦', '⠧', '⠇', '⠏']
 
