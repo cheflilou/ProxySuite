@@ -1,6 +1,6 @@
 # ProxySuite 2.0.0
 
-![ProxySuite]([https://user-images.githubusercontent.com/your-image.png](https://i.postimg.cc/5Nw94D94/Capture.png))
+![ProxySuite](https://i.postimg.cc/5Nw94D94/Capture.png)
 
 
 ------
